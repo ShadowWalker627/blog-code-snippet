@@ -2,7 +2,9 @@
   "compilerOptions": {
     "baseUrl": "./src",
     "paths": {
-      "@yolo/*": ["./*"]
+      "@yolo/*": ["./*"],
+      "@containers/*": ["./containers/*"],
+      "@components/*": ["./components/*"]
     }
   }
 }

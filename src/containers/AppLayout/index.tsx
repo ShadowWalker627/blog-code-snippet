@@ -5,6 +5,7 @@ import {
   LaptopOutlined,
   NotificationOutlined,
 } from '@ant-design/icons';
+import Routes from '@yolo/routes';
 import logo from './logo.png';
 
 const { SubMenu } = Menu;
@@ -69,7 +70,7 @@ function AppLayout() {
               minHeight: 280,
             }}
           >
-            Content
+            <Routes />
           </Content>
         </Layout>
       </Layout>

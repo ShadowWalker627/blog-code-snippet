@@ -7,9 +7,10 @@ const {
   POSTCSS_MODES,
 } = require('@craco/craco');
 const CracoLessPlugin = require('craco-less');
-const CracoAlias = require("craco-alias");
+const CracoAlias = require('craco-alias');
 const reactHotReloadPlugin = require('craco-plugin-react-hot-reload');
 const path = require('path');
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 module.exports = {
   reactScriptsVersion: 'react-scripts' /* (default value) */,
@@ -59,10 +60,14 @@ module.exports = {
     enableTypeChecking: true /* (default value)  */,
   },
   webpack: {
-    alias: {
-    },
+    alias: {},
     plugins: {
-      add: [] /* An array of plugins */,
+      add: [
+        new ESLintPlugin({
+          failOnError: false, // <== `This one`
+          emitWarning: true, // <== `And this one`
+        }),
+      ] /* An array of plugins */,
       remove:
         [] /* An array of plugin constructor's names (i.e. "StyleLintPlugin", "ESLintWebpackPlugin" ) */,
     },
@@ -84,13 +89,13 @@ module.exports = {
     {
       plugin: CracoAlias,
       options: {
-        source: "tsconfig",
+        source: 'tsconfig',
         // baseUrl SHOULD be specified
         // plugin does not take it from tsconfig
-        baseUrl: "./src",
+        baseUrl: './src',
         // tsConfigPath should point to the file where "baseUrl" and "paths" are specified
-        tsConfigPath: "./tsconfig.extend.json"
-      }
+        tsConfigPath: './tsconfig.extend.json',
+      },
     },
     {
       plugin: CracoLessPlugin,

@@ -1,13 +1,17 @@
 import React from 'react';
-import { hot } from 'react-hot-loader'
+import { BrowserRouter } from 'react-router-dom';
+
+import { hot } from 'react-hot-loader';
 import AppLayout from '@yolo/containers/AppLayout/index';
 import './App.less';
 
 function App() {
   return (
-    <div className="App" >
-      <AppLayout />
+    <BrowserRouter>
+      <div className="App">
+        <AppLayout />
       </div>
+    </BrowserRouter>
   );
 }
 
