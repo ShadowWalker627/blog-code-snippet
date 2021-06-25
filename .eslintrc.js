@@ -23,6 +23,8 @@ module.exports = {
     '@typescript-eslint',
   ],
   rules: {
+    'import/no-extraneous-dependencies': 0,
+    '@typescript-eslint/no-var-requires': 1,
     'no-use-before-define': 'off',
     '@typescript-eslint/no-use-before-define': ['error'],
     'react/jsx-filename-extension': [
@@ -39,12 +41,13 @@ module.exports = {
     'no-shadow': 'off',
     '@typescript-eslint/no-shadow': ['error'],
     '@typescript-eslint/explicit-function-return-type': [
-      'warn',
+      'off',
       {
         allowExpressions: true,
       },
     ],
-    'max-len': ['error', { code: 80 }],
+    '@typescript-eslint/explicit-module-boundary-types': "off",
+    'max-len': 0,
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
     'import/prefer-default-export': 'off',
