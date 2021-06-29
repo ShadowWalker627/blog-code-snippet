@@ -6,7 +6,7 @@ import TableWithCheckbox from '@yolo/pages/TableWithCheckbox';
 function routes() {
   return (
     <Switch>
-      <Route exact path="/">
+      <Route exact path="/tableWithCheckbox">
         <TableWithCheckbox />
       </Route>
     </Switch>

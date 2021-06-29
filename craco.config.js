@@ -71,7 +71,23 @@ module.exports = {
       remove:
         [] /* An array of plugin constructor's names (i.e. "StyleLintPlugin", "ESLintWebpackPlugin" ) */,
     },
-    configure: (webpackConfig, { env, paths }) => webpackConfig,
+    configure: (webpackConfig, { env, paths }) => {
+      webpackConfig.module.rules.push({
+        test: /\.md$/,
+        use: [
+          {
+            loader: 'html-loader',
+          },
+          {
+            loader: 'markdown-loader',
+            options: {
+              /* your options here */
+            },
+          },
+        ],
+      });
+      return webpackConfig;
+    },
   },
   jest: {
     babel: {

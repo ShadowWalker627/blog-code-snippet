@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { CopyBlock } from 'react-code-blocks';
+// import AppMarkdown from './App.md';
 
 interface Props {
   code: string;

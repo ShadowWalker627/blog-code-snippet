@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "baseUrl": "./src",
+    "noImplicitAny": false,
     "paths": {
       "@yolo/*": ["./*"],
       "@containers/*": ["./containers/*"],
